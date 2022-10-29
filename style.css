@@ -1,0 +1,244 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+*{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    outline: none;
+}
+a {
+    text-decoration: none;
+}
+body{
+    background: #f5f6fa;
+}
+  .message{
+    padding: 10px;
+    font-size: 15px;
+    font-style: bold;
+    color: black;
+  }
+ .wrapper .sidebar{
+    background: rgb(5, 68, 104);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 225px;
+    height: 100%;
+    padding: 20px 0;
+    transition: all 0.5s ease;
+}
+.wrapper .sidebar .profile{
+    margin-bottom: 30px;
+    text-align: center;
+}
+.wrapper .sidebar .profile img{
+    display: block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+.wrapper .sidebar .profile h3{
+    color: #ffffff;
+    margin: 10px 0 5px;
+}
+.wrapper .sidebar .profile p{
+    color: rgb(206, 240, 253);
+    font-size: 14px;
+}
+.wrapper .sidebar div div a{
+    display: block;
+    padding: 13px 30px;
+    border-bottom: 1px solid #10558d;
+    color: rgb(241, 237, 237);
+    font-size: 16px;
+    position: relative;
+}
+.wrapper .sidebar div div a .icon{
+    color: #dee4ec;
+    width: 30px;
+    display: inline-block;
+}
+.wrapper .sidebar div div a:hover,
+.wrapper .sidebar div div a.active{
+    color: #0c7db1;
+    background:white;
+    border-right: 2px solid rgb(5, 68, 104);
+}
+.wrapper .sidebar div div a:hover .icon,
+.wrapper .sidebar div div a.active .icon{
+    color: #0c7db1;
+}
+.wrapper .sidebar div div a:hover:before,
+.wrapper .sidebar div div a.active:before{
+    display: block;
+}
+.wrapper div .nav-container{
+    width: calc(100% - 225px);
+    margin-left: 225px;
+    transition: all 0.5s ease;
+}
+.wrapper div section{
+    transition: all 0.5s ease;
+    width: calc(100% - 225px);
+    margin-left: 225px;
+    height: 100vh;
+}
+.wrapper div footer{
+    width: calc(100% - 225px);
+    margin-left: 225px;
+    transition: all 0.5s ease;
+    height: 10vh;
+    text-align: center;
+    color: black;
+}
+.wrapper div footer .environment{
+       padding: 2rem 1.75rem;
+}
+.wrapper div .nav-container .top_navbar{
+    background: white;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 30px;
+}
+.wrapper div .nav-container .top_navbar .hamburger button{
+    font-size: 28px;
+    color: black;
+}
+.wrapper div .nav-container .top_navbar .hamburger button:hover{
+    color: gray;
+    cursor: pointer;
+}
+.wrapper div .nav-container .top_navbar  .nav-right .profile_img {
+   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body.active .wrapper .sidebar{
+    left: -225px;
+}
+body.active .wrapper .nav-container{
+    margin-left: 0;
+    width: 100%;
+}
+body.active .wrapper section{
+    margin-left: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+            form {
+                background: rgb(5 68 104);
+                padding: 20px;
+            }
+            .info-wrapper {
+                background: #e3e1e0;
+            }
+            .info-container {
+                padding: 5px;
+               
+            }
+            a {
+                text-decoration: none;
+            }
+            .items {
+                width: 100%;
+                margin: 5px;
+            }
+            .items div {
+                display:inline-block;
+            }
+            .items div:nth-child(1) {
+                width: 115px;
+                text-align: right;
+                padding: 2px;
+            }
+            .items div:nth-child(2) {
+                padding: 2;
+            }
+            .items div:nth-child(2) input {
+                padding: 4px;
+                width: 220px;
+            }
+            .btn-group {
+                display:flex; 
+                justify-content:space-between; 
+                align-items:center;
+                padding: 5px;
+            }
+            .btn-group div:nth-child(1) {
+                margin-left: 20px;
+            }
+            .btn-group div:nth-child(2) {
+                margin-right: 20px;
+            }
+            .btn-group div a{
+                font-size: 20px;
+            }
+            .btn-group div a:hover{
+                text-decoration: underline;
+            }
+            .btn-group div input{
+                background: rgb(88 162 205);
+                border-color: transparent;
+                color: black;
+                padding: 1px 8px;
+                font-size: 20px;
+            }
+            .btn-group div input{
+                cursor: pointer;
+             }
+            .btn-group div input:hover{
+                background: #9db0bf;
+                font-weight: 540;
+            }
+        table {
+            background: white;
+        }
+            th {
+            text-align: center;
+        }
+        tr:nth-child(even) {
+             background: lightgray;
+        } 
+         .action-group-first {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row;
+        } 
+         .action-group-first a {
+            font-size: 20px;
+            color: black;
+        }
+        .action-group-first a:hover {
+            color: blueviolet;
+            text-decoration: underline;
+        }
+        .action-group a {
+            font-size: 20px;
+            color: black;
+        }
+        .action-group a:hover {
+            color: blueviolet;
+            text-decoration: underline;
+        }
+
+body.active .wrapper footer{
+    margin-left: 0;
+    width: 100%;
+    height: 10vh;
+    text-align: center;
+    color: black;
+}
+
+body.active .wrapper footer .environment {
+    color: black;
+    padding: 2rem 1.75rem;
+}

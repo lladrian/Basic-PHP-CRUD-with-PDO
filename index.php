@@ -1,10 +1,13 @@
+<?php
+	session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>CRUD - Operation</title>
-	     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 	<style type="text/css">
 		*{
@@ -163,12 +166,52 @@
                 background: #9db0bf;
                 font-weight: 540;
             }
+           .alert {
+            	text-align: center;
+            	padding: 15px 0;
+            	width: 100%; 
+            	background: wheat;
+            }
+            .alert .close-btn {
+            	float: right;
+            	margin-right: 20px;
+            	font-size: 20px;
+            	color: red;
+            	padding: 0 2px;
+            }
 	</style>
 </head>
 <body >
-	<div class="wrapper">
-		<div class="container">
-			<div class="data-table-container" style="width: 100%;  padding:20px;">
+	<div>
+		
+	<div class="wrapper" style="width: 80vw; ">
+		<div class="container" style=" padding:30px;width: 100%;">
+			<div class="row">
+			<?php
+				if(isset($_SESSION['error'])){
+					echo
+					"
+					<div class='alert alert-danger text-center'>
+						<button class='close-btn fas fa-times'></button>
+						".$_SESSION['error']."
+					</div>
+					";
+					unset($_SESSION['error']);
+				}
+
+				if(isset($_SESSION['success'])){
+					echo
+					"
+					<div class='alert alert-success text-center'>
+						<button class='close-btn fas fa-times'></button>
+						".$_SESSION['success']."
+					</div>
+					";
+					unset($_SESSION['success']);
+				}
+			?>
+	</div>
+			<div class="data-table-container" style="width: 100%; ">
 				    <input type="checkbox" id="truncate">
 					<input type="checkbox" id="add">
 					<input type="checkbox" id="update">
@@ -302,5 +345,16 @@
 				</div>
 			</div>
 	</div>
+
+<script src="jquery/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function(){
+    //hide alert
+    $(document).on('click', '.close-btn', function(){
+    	$('.alert').hide();
+    })
+});
+</script>
 </body>
 </html>

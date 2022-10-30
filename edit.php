@@ -1,5 +1,6 @@
 <?php  
 	if(isset($_GET['id'])){
+		session_start();
 		include_once('connect.php');
 
 		$id = $_GET['id'];
@@ -23,9 +24,13 @@
 		$sql = "UPDATE student_info SET student_ID=:student_ID, student_name=:student_name, gender=:gender, course=:course, department=:department, year_level=:year_level WHERE id=:id";
 		$stmt= $conn->prepare($sql);
 		$stmt->execute($data);
+		$row = $stmt->rowCount();
 
-		// echo a message to say the UPDATE succeeded
-  		//echo $stmt->rowCount() . " records UPDATED successfully";
+		if($row > 0){
+			$_SESSION['success'] = 'Member updated successfully';
+		} else{
+			$_SESSION['error'] = 'Something went wrong in updating member';
+		}
   		header('location: index.php');
 	} else {
 		$_SESSION['error'] = 'Select member to delete first';

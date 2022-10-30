@@ -21,11 +21,11 @@
 		$sql = "INSERT INTO student_info (student_ID, student_name	, gender, course, department, year_level) VALUES (:student_ID, :student_name, :gender, :course, :department, :year_level)";
 		$stmt= $conn->prepare($sql);
 		$stmt->execute($data);
+		$row = $stmt->rowCount();
 
-		if($stmt->rowCount()){
+		if($row > 0){
 			echo $_SESSION['success'] = 'Member added successfully';
-		}
-		else{
+		} else{
 			$_SESSION['error'] = 'Something went wrong while adding';
 		}
 	}

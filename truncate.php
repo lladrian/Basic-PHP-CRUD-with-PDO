@@ -10,5 +10,4 @@ include_once('connect.php');
 	//Execute the statement.
 	$statement->execute();
 	header('location: index.php');
-
  ?>

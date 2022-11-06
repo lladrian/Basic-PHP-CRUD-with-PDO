@@ -219,7 +219,7 @@
 
 					<div class="container-data-1">
  						<div>      
-							<form method="POST" action="add.php">			       				
+							<form method="POST" action="add.php" enctype="multipart/form-data">
 								<div>
 			            			<div style="background: floralwhite; height:40px; ">Student INFO</div>
 			       				</div>
@@ -276,7 +276,15 @@
 			                                <div>
 			                                    <input type="text" name="st_YEAR_L" placeholder="Student Year Level">
 			                                </div>
-			                            </div>     
+			                            </div>
+			                            <div class="items">
+			                                <div>
+			                                    <label>Profile Picture</label>
+			                                </div>
+			                                <div>
+			                                      <input type="file" name="my_image">
+			                                </div>
+			                            </div>    
 			                    	</div>
 			                     	<div class="btn-group">
 			                        	<div>
@@ -307,7 +315,7 @@
 					    <label class="add" for="add" style="margin-right: 15px;">Add</label>
 					</div>
 
-					<table border="1" align="center" style="width: 100%;">
+					<table border="1" cellspacing="0"  align="center" style="width: 100%;">
 						<thead>
 						 <tr>
 						 	 <th>ID</th>
@@ -317,6 +325,7 @@
 							 <th>Course</th>
 							 <th>Department</th>
 							 <th>Year Level</th>
+							 <th>Profile Picture</th>
 							 <th>Action</th>
 						 </tr>
 						</thead>
@@ -333,9 +342,14 @@
 										 <td style='column-width: 250px;''>".$data['course']."</td>
 										 <td style='column-width: 150px;''>".$data['department']."</td>
 										 <td style='column-width: 150px;''>".$data['year_level']."</td>
+										 <td align='center'>
+										 	<div align='center' style='width=200px; height:100px;'>
+							             		<img src='uploads/".$data['image_url']."' style='width=100%; height:100%; '>
+							             	</div>
+										 </td>
 										 <td>
 											<a class='update' href='edit_modal.php?id=".$data['id']."'>Update</a>
-											<a class='delete' href='delete.php?id=".$data['id']."'>Delete</a>
+											<a class='delete' href='delete.php?url=".$data['image_url']."'>Delete</a>
 										</td>
 									</tr>";
 								}

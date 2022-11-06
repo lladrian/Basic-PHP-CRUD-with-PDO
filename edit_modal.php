@@ -115,7 +115,7 @@
 	  				echo "
 					<div style='width: 460px;'>
 					      <div style='background: floralwhite; height:40px; padding:10px;'>Student INFO</div>
-					      	<form method='post' name='frmEdit' action='edit.php?id=".$data['id']."'>
+					      	<form method='POST' name='frmEdit' action='edit.php' enctype='multipart/form-data'>
 					        <div class='info-wrapper' align='center'>
 					                    <h2>Update Data</h2>
 					        			
@@ -169,13 +169,21 @@
 					                                    <input type='text' name='st_YEAR_L' value='".$data['year_level']."''>
 					                                </div>
 					                            </div>
+					                            <div class='items'>
+					                                <div>
+					                                    <label>Profile Picture</label>
+					                                </div>
+					                                <div>
+					                                      <input type='file' name='my_image'>
+					                                </div>
+					                            </div> 
 					                    </div>
   										<div class='btn-group'>
 					                        <div>
 					                        	<a href='index.php'>BACK</a>
 					                        </div>
 					                        <div>
-					                        	<button type='submit' >Update</button> 
+					                        	<button type='submit' name='updatebtn' >Update</button> 
 					                        </div>    
 					                    </div>
 					               
